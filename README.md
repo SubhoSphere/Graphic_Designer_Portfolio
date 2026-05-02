@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Graphic Designer Portfolio
+
+A premium, interactive web portfolio built for graphic designers to showcase their creative work, services, and client testimonials. Designed with modern aesthetics, smooth animations, and a focus on high-fidelity visual presentation.
+
+## Features
+
+- **Stunning Visual Design**: Clean, modern interface tailored for showcasing high-quality graphics and branding work.
+- **Interactive UI**: Dynamic animations and smooth transitions using modern frontend technologies.
+- **Project Showcase**: Dedicated sections for highlighting featured works and case studies.
+- **Services Overview**: Clear presentation of design services offered.
+- **Client Testimonials**: Social proof section featuring feedback from previous clients.
+- **Responsive Layout**: Fully optimized for desktop, tablet, and mobile viewing.
+
+## Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Styling**: Custom CSS for maximum control and dynamic styling
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the portfolio.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Customization
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+You can start editing the content by modifying the components located in `src/components/`. The main entry point for the homepage is `src/app/page.js`.
 
-## Learn More
+Update the images in the `public/images/` directory with your own portfolio pieces to personalize the site.
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The easiest way to deploy this Next.js app is to use the [Vercel Platform](https://vercel.com/new) from the creators of Next.js.
