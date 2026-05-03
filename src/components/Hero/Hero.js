@@ -93,7 +93,7 @@ export default function Hero() {
                 </div>
               </div>
               <p className="text-[11px] font-bold text-white/90 uppercase tracking-[1px] leading-relaxed max-w-[180px]">
-                The expert team brings a creativity to every project.
+                Trusted by visionary brands and satisfied clients worldwide.
               </p>
             </div>
 
