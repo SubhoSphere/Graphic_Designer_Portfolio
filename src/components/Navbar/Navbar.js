@@ -37,14 +37,14 @@ export default function Navbar() {
             />
           </svg> */}
           <div className="flex flex-col relative">
-            <span className="font-heading text-2xl font-extrabold text-white tracking-[3px] leading-none">
+            <span className="font-heading text-xl md:text-2xl font-extrabold text-white tracking-[3px] leading-none">
               RESHAB
             </span>
             {/* <span className="absolute -top-0.5 -right-3.5 text-[10px] font-bold text-white">
               ®
             </span> */}
-            <span className="font-heading text-[9px] font-medium text-neon tracking-[5px] uppercase">
-              GRAPHIC DESIGNER
+            <span className="font-heading text-[7px] md:text-[9px] font-medium text-neon tracking-[5px] uppercase">
+              CREATIVE DESIGNER
             </span>
           </div>
         </a>
@@ -112,40 +112,36 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Dropdown (Shadcn-like) */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            className="lg:hidden overflow-hidden bg-blue-deep border-t border-neon/15"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute top-[80px] right-6 lg:hidden w-[240px] bg-[#1a1a1a]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-hidden p-2 z-[1002]"
+            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
           >
-            <ul className="flex flex-col px-8 py-5">
+            <ul className="flex flex-col">
               {navLinks.map((link, i) => (
-                <motion.li
-                  key={i}
-                  initial={{ x: -30, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: i * 0.07, duration: 0.4 }}
-                >
+                <li key={i}>
                   <a
                     href={link.href}
-                    className="block py-3.5 font-heading text-lg font-semibold text-white uppercase tracking-wide border-b border-white/[0.08] hover:text-neon transition-colors duration-200"
+                    className="block px-4 py-2.5 font-heading text-sm font-semibold text-white/80 uppercase tracking-wide rounded-md hover:bg-white/10 hover:text-white transition-colors duration-200"
                     onClick={() => setMobileOpen(false)}
                   >
                     {link.label}
                   </a>
-                </motion.li>
+                </li>
               ))}
             </ul>
-            <div className="px-8 pb-10">
+            <div className="mt-2 pt-2 border-t border-white/10">
               <a
                 href="https://wa.me/4387956739876"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 w-full py-4 bg-neon rounded-sm font-heading text-blue-primary font-black uppercase tracking-widest text-sm"
+                className="flex items-center justify-center w-full px-4 py-2.5 bg-neon rounded-md font-heading text-blue-primary font-black uppercase tracking-widest text-[10px] hover:bg-white transition-colors duration-300"
+                onClick={() => setMobileOpen(false)}
               >
                 Schedule a Call
               </a>

@@ -72,9 +72,82 @@ export default function Hero() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
         <div className="relative flex flex-col lg:flex-row items-start min-h-[calc(100vh-160px)]">
 
-          {/* Left Column — Team + Stats */}
+          {/* --- MOBILE FULL-SCREEN LAYOUT --- */}
+          <div className="flex md:hidden flex-col h-[100dvh] w-full relative overflow-hidden -mt-20">
+            {/* Background Image (Full Screen Mobile) */}
+            <div className="absolute inset-0 z-0">
+              <Image
+                src="/images/hero-men.png"
+                alt="Reshab"
+                fill
+                className="object-cover object-top opacity-50"
+                priority
+              />
+              {/* Aggressive Gradient Overlays for Seamless Blending */}
+              <div className="absolute inset-0 bg-gradient-to-b from-[#0D00AA] via-transparent to-[#0D00AA] opacity-100" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0D00AA] via-transparent to-[#0D00AA] opacity-100" />
+              <div className="absolute inset-0 bg-[#0D00AA]/20" /> {/* Subtle tint to unify color */}
+            </div>
+
+            {/* Content Layer */}
+            <div className="relative z-10 flex flex-col items-center justify-center flex-1 px-4 text-center mt-12">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <span className="inline-block px-4 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold text-neon uppercase tracking-[3px] mb-6">
+                  Available for new projects
+                </span>
+                <h1 className="font-heading font-black uppercase leading-[0.85] tracking-tighter mb-8">
+                  <span className="block text-[72px] text-neon">Graphic</span>
+                  <span className="block text-[72px] text-transparent [-webkit-text-stroke:1px_#ffff33]">Designer</span>
+                </h1>
+
+                {/* Mobile Stats (Now above the image) */}
+                <div className="flex justify-center gap-6 mb-10 overflow-x-auto w-full no-scrollbar px-2">
+                  <AnimatedCounter target={500} label="Clients" />
+                  <AnimatedCounter target={125} label="Projects" />
+                  <AnimatedCounter target={450} label="Featured" />
+                </div>
+
+                <p className="text-white/60 text-sm leading-relaxed max-w-[300px] mx-auto">
+                  I transform complex ideas into high-end visual stories for global brands.
+                </p>
+              </motion.div>
+            </div>
+
+            {/* Bottom Row - Rotating Play Button */}
+            <motion.div
+              className="relative z-10 p-10 flex justify-center items-center"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5 }}
+            >
+              <div
+                className="relative flex items-center justify-center w-32 h-32 group cursor-pointer"
+                onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+              >
+                <svg className="absolute w-full h-full animate-[spin_12s_linear_infinite]" viewBox="0 0 100 100">
+                  <path id="mobileTextPath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
+                  <text className="text-[11px] font-bold uppercase tracking-[4px] fill-white/80">
+                    <textPath href="#mobileTextPath" startOffset="0%">
+                      •PLAY•VIEW PORTFOLIO
+                    </textPath>
+                  </text>
+                </svg>
+                <div className="w-14 h-14 bg-neon rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-[0_0_30px_rgba(200,255,0,0.3)]">
+                  <svg width="18" height="20" viewBox="0 0 18 20" fill="none" className="ml-1">
+                    <path d="M2 1L16 10L2 19V1Z" fill="#0D00AA" stroke="#0D00AA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Left Column (Desktop) */}
           <motion.div
-            className="relative z-20 flex flex-col gap-8 lg:gap-10 pt-8 lg:pt-12 w-full lg:w-auto"
+            className="relative z-20 hidden md:flex flex-col gap-8 lg:gap-10 pt-8 lg:pt-12 w-full lg:w-auto"
             initial={{ x: -80, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
@@ -105,8 +178,8 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Center — Main Heading + Image */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          {/* Center — Main Heading + Image (Desktop) */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none hidden md:flex">
             {/* CREATIVE AGENCY Text */}
             <motion.div
               className="relative text-center select-none"
@@ -151,15 +224,15 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right Column */}
+          {/* Right Column (Desktop) */}
           <motion.div
-            className="relative z-20 ml-auto flex flex-col items-end justify-between gap-12 pt-8 lg:pt-12 min-h-[calc(100vh-200px)] w-full lg:w-auto mt-8 lg:mt-0 pb-12"
+            className="relative z-20 ml-auto hidden md:flex flex-col items-end justify-between gap-12 pt-8 lg:pt-12 min-h-[calc(100vh-200px)] w-full lg:w-auto mt-8 lg:mt-0 pb-12"
             initial={{ x: 80, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
           >
             {/* Top Right: Rotating Circular Text + Play Button */}
-            <div 
+            <div
               className="relative flex items-center justify-center w-32 h-32 lg:w-40 lg:h-40 group cursor-pointer mt-4 lg:mt-0"
               onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
             >
@@ -179,7 +252,7 @@ export default function Hero() {
             </div>
 
             {/* Bottom Right: Experience Tag - Simplified Design */}
-            <div className="relative overflow-hidden bg-white/[0.02] backdrop-blur-xl p-6 w-48 mt-auto rounded-lg ml-auto">
+            <div className="relative overflow-hidden p-6 w-48 mt-auto rounded-lg ml-auto">
               <div className="flex flex-col relative z-10 items-end text-right">
                 <span className="font-heading text-6xl lg:text-7xl font-black text-white leading-[0.8] mb-2">
                   5<span className="text-neon text-4xl font-semibold">+</span>
