@@ -4,21 +4,21 @@ import { motion } from "framer-motion";
 
 export default function CTA() {
   return (
-    <section className="relative h-[600px] md:h-[700px] lg:h-[800px] w-full overflow-hidden">
+    <section className="relative h-[600px] md:h-screen w-full overflow-hidden">
       {/* Background Image with Parallax-like feel */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat grayscale-[20%]"
-        style={{ backgroundImage: "url('/images/cta-bg.png')" }}
+        style={{ backgroundImage: "url('/images/cta-bg-graphic.png')" }}
       />
-      
+
       {/* Dark Overlay for better contrast */}
       <div className="absolute inset-0 bg-black/10" />
 
       {/* Content Container */}
       <div className="relative z-10 h-full max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center justify-end">
-        
+
         {/* The Black Card */}
-        <motion.div 
+        <motion.div
           className="relative bg-[#1a1a1a] w-full max-w-[650px] p-10 md:p-16 lg:p-20 shadow-2xl overflow-hidden"
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -40,7 +40,7 @@ export default function CTA() {
 
           {/* Rotating Badge Design Element */}
           <div className="absolute -bottom-10 -right-10 w-48 h-48 md:w-64 md:h-64 pointer-events-none">
-            <motion.div 
+            <motion.div
               className="relative w-full h-full"
               animate={{ rotate: 360 }}
               transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
@@ -55,7 +55,7 @@ export default function CTA() {
                 </defs>
                 <text className="text-[8px] font-black uppercase tracking-[2px] fill-current">
                   <textPath xlinkHref="#circlePath">
-                    Digital Marketing * Social Media Management *
+                    Brand Identity * Visual Storytelling * Art Direction *
                   </textPath>
                 </text>
               </svg>

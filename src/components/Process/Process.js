@@ -6,28 +6,28 @@ const steps = [
   {
     number: "01",
     label: "DISCOVER",
-    title: "UNDERSTANDING YOUR VISION",
+    title: "STRATEGIC ALIGNMENT",
     bgColor: "bg-blue-primary",
     isTall: true,
   },
   {
     number: "02",
-    label: "DESIGN",
-    title: "CRAFTING UNIQUE CONCEPTS",
+    label: "CONCEPT",
+    title: "VISUAL EXPLORATION",
     bgColor: "bg-[#1a1a1a]",
     isTall: false,
   },
   {
     number: "03",
-    label: "DEVELOP",
-    title: "BRING DESIGNS TO LIFE",
+    label: "REFINE",
+    title: "PIXEL PERFECTION",
     bgColor: "bg-blue-primary",
     isTall: true,
   },
   {
     number: "04",
     label: "DELIVER",
-    title: "LAUNCH WITH EXCELLENCE",
+    title: "BRAND LAUNCH",
     bgColor: "bg-[#1a1a1a]",
     isTall: false,
   },
@@ -44,21 +44,21 @@ export default function Process() {
               <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
                 <path
                   d="M16 0L19.5 12.5L32 16L19.5 19.5L16 32L12.5 19.5L0 16L12.5 12.5L16 0Z"
-                  fill="#c8ff00"
+                  fill="#ffff33"
                 />
               </svg>
               <span className="text-black font-bold uppercase tracking-[3px] text-sm font-heading">
-                Our Proven Process
+                My Creative Process
               </span>
             </div>
             <h2 className="font-heading text-4xl md:text-5xl lg:text-[72px] font-black text-black uppercase leading-[1]">
-              From Vision To Reality
+              From Concept To Reality
             </h2>
           </div>
 
           <div className="lg:col-span-4 lg:pt-12">
             <p className="text-black/60 text-sm leading-relaxed max-w-[420px]">
-              Placerat neque senectus amet cras efficitur. Aptent malesuada sit conubia tincidunt iaculis faucibus Arcu et aliquet ad amet cras efficitur sollicitudin maximus elementum hac lectus ex fusce.
+              Every project is a unique journey. I follow a rigorous, highly collaborative process to ensure that your brand's visual identity not only looks stunning but strategically communicates your core message to the world.
             </p>
           </div>
         </div>
@@ -68,9 +68,8 @@ export default function Process() {
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              className={`relative ${step.bgColor} p-8 md:p-10 flex flex-col justify-between ${
-                step.isTall ? "h-[400px] lg:h-[450px]" : "h-[320px] lg:h-[370px] lg:mt-20"
-              } shadow-xl group hover:scale-[1.02] transition-transform duration-500`}
+              className={`relative ${step.bgColor} p-8 md:p-10 flex flex-col justify-between ${step.isTall ? "h-[350px] lg:h-[400px]" : "h-[270px] lg:h-[320px] lg:mt-20"
+                } shadow-xl group hover:scale-[1.02] transition-transform duration-500`}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

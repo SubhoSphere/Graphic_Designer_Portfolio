@@ -2,7 +2,7 @@
 
 /* ===== Custom Theme ===== */
 @theme {
-  --color-blue-primary: #1400ff;
+  --color-blue-primary: #0D00AA;
   --color-blue-deep: #0f00cc;
   --color-blue-darker: #0a0099;
   --color-neon: #c8ff00;
@@ -16,14 +16,14 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   body {
     font-family: var(--font-body);
     background: var(--color-blue-primary);
     color: white;
-    overflow-x: hidden;
+    overflow-x: clip;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -33,7 +33,7 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: var(--color-blue-deep);
+    background: var(--color-blue-primary);
   }
 
   ::-webkit-scrollbar-thumb {

@@ -13,12 +13,6 @@ export default function Footer() {
           {/* Logo & Contact */}
           <div className="space-y-10">
             <div className="flex items-center gap-3">
-              <svg width="40" height="40" viewBox="0 0 32 32" fill="none">
-                <path
-                  d="M16 0L19.5 12.5L32 16L19.5 19.5L16 32L12.5 19.5L0 16L12.5 12.5L16 0Z"
-                  fill="#c8ff00"
-                />
-              </svg>
               <div className="flex flex-col">
                 <span className="text-white text-2xl font-black uppercase tracking-tighter font-heading leading-none">
                   Reshab®
@@ -103,15 +97,15 @@ export default function Footer() {
 
         {/* Massive Outlined Text */}
         <div className="relative py-12 select-none pointer-events-none">
-          <h2 className="text-[10vw] font-black uppercase leading-none text-transparent [-webkit-text-stroke:1px_#c8ff00] opacity-20 whitespace-nowrap">
-            Reshab Creative
+          <h2 className="text-[10vw] font-black uppercase leading-none text-transparent [-webkit-text-stroke:1px_#ffff33] opacity-20 whitespace-nowrap">
+            Reshab Sarkar
           </h2>
         </div>
 
         {/* Bottom Legal Section */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-12 border-t border-white/5">
           <p className="text-white/20 text-[10px] font-bold uppercase tracking-widest">
-            Nomaden Studio © 2024 All rights reserved
+            Reshab © {new Date().getFullYear()} All rights reserved
           </p>
           <div className="flex gap-8">
             <a href="#" className="text-white/20 hover:text-white text-[10px] font-bold uppercase tracking-widest transition-colors">Privacy Policy</a>

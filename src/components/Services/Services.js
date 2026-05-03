@@ -44,11 +44,11 @@ export default function Services() {
               <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
                 <path
                   d="M16 0L19.5 12.5L32 16L19.5 19.5L16 32L12.5 19.5L0 16L12.5 12.5L16 0Z"
-                  fill="#c8ff00"
+                  fill="#ffff33"
                 />
               </svg>
               <span className="text-sm font-bold text-neon uppercase tracking-[3px]">
-                What We Do
+                What I Do
               </span>
             </motion.div>
 
@@ -101,7 +101,7 @@ export default function Services() {
                 <ArrowIcon />
               </div>
               <p className="text-[13px] text-white/50 leading-relaxed font-light">
-                Lorem ipsum do adipiscing elit Ut elit tellus luctus nec ullamcorper mattis pulvinar dapibus leo.
+                Developing foundational brand identities, including logo design, color palettes, and typography systems that resonate with your target audience and tell a compelling story.
               </p>
             </div>
             <div className="px-7 pb-7 pt-3">
@@ -145,7 +145,7 @@ export default function Services() {
                 <ArrowIcon />
               </div>
               <p className="text-[13px] text-white/60 leading-relaxed font-light">
-                Lorem ipsum do adipiscing elit Ut elit tellus luctus nec ullamcorper mattis pulvinar dapibus leo.
+                Crafting pixel-perfect website interfaces, mobile app layouts, and interactive digital experiences that balance aesthetic beauty with functional, intuitive user flows.
               </p>
             </div>
           </motion.div>
@@ -167,7 +167,7 @@ export default function Services() {
                 <ArrowIcon />
               </div>
               <p className="text-[13px] text-white/50 leading-relaxed font-light">
-                Lorem ipsum do adipiscing elit Ut elit tellus luctus nec ullamcorper mattis pulvinar dapibus leo.
+                Designing eye-catching visual assets for social media, advertising campaigns, and print materials to ensure consistent, high-impact messaging across all platforms.
               </p>
             </div>
             <div className="px-7 pb-7 pt-3">

@@ -4,11 +4,11 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "About Me", href: "#about" },
   { label: "Services", href: "#services" },
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
   { label: "Portfolio", href: "#portfolio" },
-  { label: "Blog", href: "#blog" },
-  { label: "Contact Me", href: "#contact" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -33,7 +33,7 @@ export default function Navbar() {
           >
             <path
               d="M16 0L19.5 12.5L32 16L19.5 19.5L16 32L12.5 19.5L0 16L12.5 12.5L16 0Z"
-              fill="#c8ff00"
+              fill="#ffff33"
             />
           </svg> */}
           <div className="flex flex-col relative">

@@ -180,7 +180,7 @@ export default function Contact() {
               <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
                 <path
                   d="M16 0L19.5 12.5L32 16L19.5 19.5L16 32L12.5 19.5L0 16L12.5 12.5L16 0Z"
-                  fill="#c8ff00"
+                  fill="#ffff33"
                 />
               </svg>
               <span className="text-black font-bold uppercase tracking-[3px] text-xs font-heading">

@@ -14,9 +14,9 @@ const outfit = Outfit({
 });
 
 export const metadata = {
-  title: "Reshab — Creative Agency",
+  title: "Reshab Sarkar — Graphic Designer",
   description:
-    "Reshab is a creative digital agency specializing in branding, graphic design, web design, and digital marketing.",
+    "Creative graphic designer specializing in branding, graphic design, web design, and digital marketing.",
 };
 
 export default function RootLayout({ children }) {

@@ -52,8 +52,17 @@ function AnimatedCounter({ target, suffix = "+", label }) {
 export default function Hero() {
   return (
     <section className="relative min-h-screen bg-blue-primary overflow-hidden pb-0">
+      {/* Background Noise Texture */}
+      <div
+        className="absolute inset-0 opacity-20 pointer-events-none mix-blend-overlay"
+        style={{
+          backgroundImage: `url('/nnnoise.svg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
       {/* Background Grid Pattern */}
-      <div className="absolute inset-0 opacity-[0.04]"
+      <div className="absolute inset-0 opacity-[0.04] pointer-events-none"
         style={{
           backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px)`,
           backgroundSize: '40px 40px'
@@ -117,14 +126,14 @@ export default function Hero() {
 
             {/* Hero Image — Woman with Headphones */}
             <motion.div
-              className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[40vw] max-w-[520px] min-w-[280px] pointer-events-none z-10"
+              className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[40vw] md:max-w-[520px] lg:max-w-[590px] min-w-[280px] pointer-events-none z-10"
               initial={{ y: 100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
               <div className="relative">
                 <Image
-                  src="/images/hero-boy.png"
+                  src="/images/hero-men.png"
                   alt="Reshab"
                   width={520}
                   height={650}
@@ -135,99 +144,81 @@ export default function Hero() {
                 {/* Gradient mask to blend edges */}
                 <div className="absolute inset-0 pointer-events-none"
                   style={{
-                    background: `linear-gradient(to bottom, transparent 70%, #1400ff 100%)`
+                    background: `linear-gradient(to bottom, transparent 70%, #0D00AA 100%)`
                   }}
                 />
               </div>
             </motion.div>
           </div>
 
-          {/* Right Column — Star, Description, CTA */}
+          {/* Right Column */}
           <motion.div
-            className="relative z-20 ml-auto flex flex-col items-end gap-6 pt-8 lg:pt-12 w-full lg:w-auto mt-8 lg:mt-0"
+            className="relative z-20 ml-auto flex flex-col items-end justify-between gap-12 pt-8 lg:pt-12 min-h-[calc(100vh-200px)] w-full lg:w-auto mt-8 lg:mt-0 pb-12"
             initial={{ x: 80, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* Rotating Star Icon */}
-            <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full border-2 border-white/30 flex items-center justify-center">
-              <svg
-                className="animate-star-pulse"
-                width="28"
-                height="28"
-                viewBox="0 0 32 32"
-                fill="none"
-              >
-                <path
-                  d="M16 2L20 12L30 16L20 20L16 30L12 20L2 16L12 12L16 2Z"
-                  fill="none"
-                  stroke="white"
-                  strokeWidth="1.5"
-                />
+            {/* Top Right: Rotating Circular Text + Play Button */}
+            <div 
+              className="relative flex items-center justify-center w-32 h-32 lg:w-40 lg:h-40 group cursor-pointer mt-4 lg:mt-0"
+              onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+            >
+              <svg className="absolute w-full h-full animate-[spin_12s_linear_infinite]" viewBox="0 0 100 100">
+                <path id="textPath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
+                <text className="text-[10.5px] font-bold uppercase tracking-[4.5px] fill-white/80">
+                  <textPath href="#textPath" startOffset="0%">
+                    •PLAY•VIEW PORTFOLIO
+                  </textPath>
+                </text>
               </svg>
+              <div className="w-14 h-14 lg:w-16 lg:h-16 bg-neon rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-[0_0_30px_rgba(200,255,0,0.2)]">
+                <svg width="18" height="20" viewBox="0 0 18 20" fill="none" className="ml-1">
+                  <path d="M2 1L16 10L2 19V1Z" fill="#0D00AA" stroke="#0D00AA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
             </div>
 
-            {/* Description */}
-            <div className="flex flex-col items-end gap-5 mt-auto lg:mt-48">
-              {/* <p className="text-[13px] lg:text-sm text-white/70 leading-relaxed max-w-[260px] text-right font-light">
-                Engineering Digital Identities through Code and Cinema.
-              </p> */}
-
-              {/* Get Started Button */}
-              {/* <a
-                href="#services"
-                className="group flex items-center gap-3 px-7 py-3.5 border border-white/40 rounded-full text-xs font-bold uppercase tracking-[2px] text-white hover:bg-neon hover:text-blue-primary hover:border-neon transition-all duration-300"
-              >
-                Get Started
-                <svg
-                  className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                  />
-                  <path
-                    d="M10 8L14 12L10 16"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </a> */}
-
-              {/* Play Button */}
-              <motion.button
-                className="w-14 h-14 rounded-full bg-neon flex items-center justify-center hover:bg-neon-light transition-colors duration-300 shadow-[0_0_30px_rgba(200,255,0,0.3)]"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                aria-label="Play video"
-              >
-                <svg
-                  width="18"
-                  height="20"
-                  viewBox="0 0 18 20"
-                  fill="none"
-                >
-                  <path
-                    d="M2 1L16 10L2 19V1Z"
-                    fill="#1400ff"
-                    stroke="#1400ff"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </motion.button>
+            {/* Bottom Right: Experience Tag - Simplified Design */}
+            <div className="relative overflow-hidden bg-white/[0.02] backdrop-blur-xl p-6 w-48 mt-auto rounded-lg ml-auto">
+              <div className="flex flex-col relative z-10 items-end text-right">
+                <span className="font-heading text-6xl lg:text-7xl font-black text-white leading-[0.8] mb-2">
+                  5<span className="text-neon text-4xl font-semibold">+</span>
+                </span>
+                <span className="text-[10px] font-bold text-white uppercase tracking-[3px] leading-tight mt-1">
+                  Years Of
+                </span>
+                <span className="text-[10px] font-bold text-white/40 uppercase tracking-[3px] leading-tight">
+                  Experience
+                </span>
+              </div>
             </div>
+
           </motion.div>
         </div>
       </div>
     </section>
   );
 }
+
+{/* <motion.button
+  className="w-14 h-14 rounded-full bg-neon flex items-center justify-center hover:bg-neon-light transition-colors duration-300 shadow-[0_0_30px_rgba(200,255,0,0.3)]"
+  whileHover={{ scale: 1.1 }}
+  whileTap={{ scale: 0.95 }}
+  aria-label="Play video"
+>
+  <svg
+    width="18"
+    height="20"
+    viewBox="0 0 18 20"
+    fill="none"
+  >
+    <path
+      d="M2 1L16 10L2 19V1Z"
+      fill="#0D00AA"
+      stroke="#0D00AA"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+</motion.button> */}

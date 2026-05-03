@@ -21,7 +21,7 @@ export default function NotFound() {
           </h1>
           
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%]">
-            <h2 className="text-xl md:text-3xl font-bold font-heading text-neon drop-shadow-[0_0_15px_rgba(200,255,0,0.3)] bg-blue-primary/90 px-6 py-3 inline-block backdrop-blur-sm -rotate-3 border border-neon/20 shadow-xl">
+            <h2 className="text-xl md:text-3xl font-bold font-heading text-neon drop-shadow-[0_0_15px_rgba(255,255,51,0.3)] bg-blue-primary/90 px-6 py-3 inline-block backdrop-blur-sm -rotate-3 border border-neon/20 shadow-xl">
               Page Not Found
             </h2>
           </div>

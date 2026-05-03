@@ -14,7 +14,7 @@ export default function Portfolio() {
               <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
                 <path
                   d="M16 0L19.5 12.5L32 16L19.5 19.5L16 32L12.5 19.5L0 16L12.5 12.5L16 0Z"
-                  fill="#c8ff00"
+                  fill="#ffff33"
                 />
               </svg>
               <span className="text-black font-bold uppercase tracking-[3px] text-sm font-heading">
@@ -28,7 +28,7 @@ export default function Portfolio() {
 
           <div className="md:col-span-4 flex flex-col items-start md:items-end justify-between py-2">
             <p className="text-black/60 text-sm leading-relaxed max-w-[320px] md:text-right font-medium">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Congue aptent placerat neque senectus amet cras efficitur. Aptent malesuada.
+              Explore a handpicked selection of my most impactful graphic design projects. From complete brand identities to dynamic digital interfaces, each piece demonstrates a commitment to aesthetic perfection.
             </p>
             <a
               href="#contact"

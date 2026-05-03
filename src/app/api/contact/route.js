@@ -18,22 +18,18 @@ const contactSchema = z.object({
 export async function POST(request) {
   try {
     const body = await request.json();
-    
+
     // Validate body
     const validatedData = contactSchema.parse(body);
     const { name, email, phone, subject, message } = validatedData;
 
     // Check if RESEND_API_KEY is actually configured
     if (!process.env.RESEND_API_KEY) {
-      console.warn("RESEND_API_KEY is not set. Simulating successful email send.");
-      console.log("Mock Email to Admin:", { name, email, phone, subject, message });
-      console.log("Mock Email to Client:", { email, name });
-      
       // Simulate network delay
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      
+
       return NextResponse.json(
-        { message: 'Mock email sent successfully. Please configure RESEND_API_KEY.' },
+        { message: 'Please configure RESEND_API_KEY.' },
         { status: 200 }
       );
     }
@@ -41,7 +37,7 @@ export async function POST(request) {
     // Prepare to send emails concurrently
     // Note: You must verify your domain or use a verified sender email in Resend.
     // For testing, Resend allows sending FROM onboarding@resend.dev TO your registered email.
-    
+
     // 1. Send notification to admin (Reshab)
     const adminEmailPromise = resend.emails.send({
       from: 'Contact Form <onboarding@resend.dev>', // Update this to your verified domain (e.g. hello@reshabcreative.com) when ready
@@ -67,14 +63,14 @@ export async function POST(request) {
     );
   } catch (error) {
     console.error('Error handling contact form:', error);
-    
+
     if (error instanceof z.ZodError) {
       return NextResponse.json(
         { message: 'Invalid form data', errors: error.errors },
         { status: 400 }
       );
     }
-    
+
     return NextResponse.json(
       { message: 'Failed to send message. Please try again later.' },
       { status: 500 }

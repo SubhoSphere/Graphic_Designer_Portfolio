@@ -29,7 +29,7 @@ export default function Testimonials() {
               <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
                 <path
                   d="M16 0L19.5 12.5L32 16L19.5 19.5L16 32L12.5 19.5L0 16L12.5 12.5L16 0Z"
-                  fill="#c8ff00"
+                  fill="#ffff33"
                 />
               </svg>
               <span className="text-white font-bold uppercase tracking-[3px] text-sm font-heading">
@@ -80,7 +80,7 @@ export default function Testimonials() {
                   <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="none">
                     <path
                       d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-                      fill="#c8ff00"
+                      fill="#ffff33"
                     />
                   </svg>
                 ))}
