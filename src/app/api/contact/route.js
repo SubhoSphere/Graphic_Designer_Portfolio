@@ -45,7 +45,7 @@ export async function POST(request) {
     // 1. Send notification to admin (Reshab)
     const adminEmailPromise = resend.emails.send({
       from: 'Contact Form <onboarding@resend.dev>', // Update this to your verified domain (e.g. hello@reshabcreative.com) when ready
-      to: ['contact@reshabcreative.com'], // Update to the email where you want to receive notifications
+      to: [process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'contact@reshabcreative.com'], // Update to the email where you want to receive notifications
       subject: `New Inquiry: ${subject}`,
       react: AdminNotificationEmail({ name, email, phone, subject, message }),
       replyTo: email,

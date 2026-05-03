@@ -33,12 +33,12 @@ export default function Footer() {
               <div className="space-y-2">
                 <h4 className="text-white font-bold uppercase tracking-widest text-[10px]">Contact Us</h4>
                 <p className="text-white/40 text-xs leading-relaxed max-w-[200px]">
-                  123 Montra Studio Bulevard,<br />Los Angeles, CA 90210
+                  {process.env.NEXT_PUBLIC_OFFICE_ADDRESS || "123 Creative Ave, USA"}
                 </p>
               </div>
               <div className="space-y-2">
                 <h4 className="text-white font-bold uppercase tracking-widest text-[10px]">Contact Us</h4>
-                <p className="text-white text-sm font-bold">+1 (800) 234 - 5678</p>
+                <p className="text-white text-sm font-bold">{process.env.NEXT_PUBLIC_PHONE_NUMBER || "+1 (800) 234 - 5678"}</p>
               </div>
             </div>
           </div>
@@ -84,13 +84,13 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="flex items-baseline gap-3">
                 <h3 className="text-white text-xl md:text-2xl font-black uppercase font-heading leading-none">
-                  (+23) 4356 2345
+                  {process.env.NEXT_PUBLIC_PHONE_NUMBER || "(+23) 4356 2345"}
                 </h3>
                 <span className="text-white/20 text-[8px] font-bold uppercase tracking-widest">Phone Number</span>
               </div>
               <div className="flex items-baseline gap-3">
                 <h3 className="text-white text-xl md:text-2xl font-black uppercase font-heading leading-none">
-                  reshab@info.com
+                  {process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "reshab@info.com"}
                 </h3>
                 <span className="text-white/20 text-[8px] font-bold uppercase tracking-widest">Email Address</span>
               </div>

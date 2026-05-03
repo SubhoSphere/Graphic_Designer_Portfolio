@@ -203,19 +203,19 @@ export default function Contact() {
             <div className="grid grid-cols-2 gap-6 lg:gap-8">
               <div className="space-y-1">
                 <span className="text-black font-bold uppercase tracking-wider text-[10px]">Email</span>
-                <p className="text-blue-primary font-bold text-xs lg:text-sm">contact@reshabcreative.com</p>
+                <p className="text-blue-primary font-bold text-xs lg:text-sm">{process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@reshabcreative.com"}</p>
               </div>
               <div className="space-y-1">
                 <span className="text-black font-bold uppercase tracking-wider text-[10px]">Phone</span>
-                <p className="text-blue-primary font-bold text-xs lg:text-sm">+1 (555) 123-4567</p>
+                <p className="text-blue-primary font-bold text-xs lg:text-sm">{process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+1 (555) 123-4567"}</p>
               </div>
               <div className="space-y-1">
                 <span className="text-black font-bold uppercase tracking-wider text-[10px]">Office Address</span>
-                <p className="text-blue-primary font-bold text-xs lg:text-sm leading-tight">123 Creative Ave, USA</p>
+                <p className="text-blue-primary font-bold text-xs lg:text-sm leading-tight">{process.env.NEXT_PUBLIC_OFFICE_ADDRESS || "123 Creative Ave, USA"}</p>
               </div>
               <div className="space-y-1">
                 <span className="text-black font-bold uppercase tracking-wider text-[10px]">Hours</span>
-                <p className="text-blue-primary font-bold text-xs lg:text-sm">9:00 AM - 6:00 PM</p>
+                <p className="text-blue-primary font-bold text-xs lg:text-sm">{process.env.NEXT_PUBLIC_BUSINESS_HOURS || "9:00 AM - 6:00 PM"}</p>
               </div>
             </div>
           </div>
