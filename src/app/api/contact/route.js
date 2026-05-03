@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { Resend } from 'resend';
+import { render } from '@react-email/render';
 import { AdminNotificationEmail, ClientAutoReplyEmail } from '@/emails/templates';
 
 const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy_key_to_prevent_crash_if_not_set');
@@ -38,12 +39,16 @@ export async function POST(request) {
     // Note: You must verify your domain or use a verified sender email in Resend.
     // For testing, Resend allows sending FROM onboarding@resend.dev TO your registered email.
 
+    // Pre-render the React components to HTML strings to avoid Vercel edge runtime rendering issues
+    const adminHtml = await render(AdminNotificationEmail({ name, email, phone, subject, message }));
+    const clientHtml = await render(ClientAutoReplyEmail({ name }));
+
     // 1. Send notification to admin (Reshab)
     const adminEmailPromise = resend.emails.send({
       from: 'Contact Form <onboarding@resend.dev>', // Update this to your verified domain (e.g. hello@reshabcreative.com) when ready
       to: [process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'contact@reshabcreative.com'], // Update to the email where you want to receive notifications
       subject: `New Inquiry: ${subject}`,
-      react: AdminNotificationEmail({ name, email, phone, subject, message }),
+      html: adminHtml,
       replyTo: email,
     });
 
@@ -52,10 +57,20 @@ export async function POST(request) {
       from: 'Reshab Creative <onboarding@resend.dev>', // Update this to your verified domain when ready
       to: [email],
       subject: 'Thank you for your inquiry!',
-      react: ClientAutoReplyEmail({ name }),
+      html: clientHtml,
     });
 
-    await Promise.all([adminEmailPromise, clientEmailPromise]);
+    const results = await Promise.allSettled([adminEmailPromise, clientEmailPromise]);
+
+    // Check if the admin email failed (which is the critical one)
+    if (results[0].status === 'rejected') {
+      console.error('Failed to send admin notification:', results[0].reason);
+      throw new Error('Failed to send admin notification');
+    }
+
+    if (results[1].status === 'rejected') {
+      console.warn('Auto-reply failed (likely due to unverified domain on Resend):', results[1].reason);
+    }
 
     return NextResponse.json(
       { message: 'Message sent successfully!' },
