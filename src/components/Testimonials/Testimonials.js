@@ -8,13 +8,13 @@ const testimonials = [
     name: "RAJ PATEL",
     role: "Founder",
     image: "/images/client-1.png",
-    quote: "Aurelia helped us redefine our identity with stunning visuals and impactful messaging. They exceeded our expectations in every way. It was a pleasure working with such a talented team.",
+    quote: "Reshab helped us redefine our identity with stunning visuals and impactful messaging. They exceeded our expectations in every way. It was a pleasure working with such a talented team.",
   },
   {
     name: "MIA BROWN",
     role: "Creative Director",
     image: "/images/client-2.png",
-    quote: "The team at Aurelia turned our goals into reality with ease. Their professionalism and creativity set them apart from other agencies. We couldn't be happier with the results!",
+    quote: "The team at Reshab turned our goals into reality with ease. Their professionalism and creativity set them apart from other agencies. We couldn't be happier with the results!",
   },
 ];
 

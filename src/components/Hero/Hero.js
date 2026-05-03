@@ -74,13 +74,13 @@ export default function Hero() {
             <div className="flex flex-col gap-3">
               <div className="flex -space-x-3">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-neon/60 to-blue-deep border-2 border-blue-primary overflow-hidden">
-                  <div className="w-full h-full bg-[url('https://api.dicebear.com/9.x/avataaars/svg?seed=Felix')] bg-cover bg-center" />
+                  <div className="w-full h-full bg-[url('https://res.cloudinary.com/drfodwc7q/image/upload/v1773668472/landlord_qssmys.jpg')] bg-cover bg-center" />
                 </div>
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-blue-deep border-2 border-blue-primary overflow-hidden">
-                  <div className="w-full h-full bg-[url('https://api.dicebear.com/9.x/avataaars/svg?seed=Aneka')] bg-cover bg-center" />
+                  <div className="w-full h-full bg-[url('https://res.cloudinary.com/drfodwc7q/image/upload/v1772995730/fs1_vafpsg.png')] bg-cover bg-center" />
                 </div>
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-blue-deep border-2 border-blue-primary overflow-hidden">
-                  <div className="w-full h-full bg-[url('https://api.dicebear.com/9.x/avataaars/svg?seed=Luna')] bg-cover bg-center" />
+                  <div className="w-full h-full bg-[url('https://res.cloudinary.com/drfodwc7q/image/upload/v1728151902/vqoflcumqgouirxfc1g6.jpg')] bg-cover bg-center" />
                 </div>
               </div>
               <p className="text-[11px] font-bold text-white/90 uppercase tracking-[1px] leading-relaxed max-w-[180px]">
@@ -125,11 +125,12 @@ export default function Hero() {
               <div className="relative">
                 <Image
                   src="/images/hero-boy.png"
-                  alt="Creative professional with headphones"
+                  alt="Reshab"
                   width={520}
                   height={650}
                   className="w-full h-full object-contain"
                   priority
+                  quality={100}
                 />
                 {/* Gradient mask to blend edges */}
                 <div className="absolute inset-0 pointer-events-none"

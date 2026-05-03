@@ -4,12 +4,11 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "About Us", href: "#about" },
-  { label: "Our Services", href: "#services", hasDropdown: true },
-  { label: "Portfolio", href: "#portfolio", hasDropdown: true },
-  { label: "Pages", href: "#pages", hasDropdown: true },
-  { label: "Contact Us", href: "#contact" },
+  { label: "About Me", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Blog", href: "#blog" },
+  { label: "Contact Me", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -25,7 +24,7 @@ export default function Navbar() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5 no-underline">
-          <svg
+          {/* <svg
             className="flex-shrink-0"
             width="32"
             height="32"
@@ -36,16 +35,16 @@ export default function Navbar() {
               d="M16 0L19.5 12.5L32 16L19.5 19.5L16 32L12.5 19.5L0 16L12.5 12.5L16 0Z"
               fill="#c8ff00"
             />
-          </svg>
+          </svg> */}
           <div className="flex flex-col relative">
             <span className="font-heading text-2xl font-extrabold text-white tracking-[3px] leading-none">
-              AURELIA
+              RESHAB
             </span>
-            <span className="absolute -top-0.5 -right-3.5 text-[10px] font-bold text-white">
+            {/* <span className="absolute -top-0.5 -right-3.5 text-[10px] font-bold text-white">
               ®
-            </span>
+            </span> */}
             <span className="font-heading text-[9px] font-medium text-neon tracking-[5px] uppercase">
-              AGENCY
+              GRAPHIC DESIGNER
             </span>
           </div>
         </a>

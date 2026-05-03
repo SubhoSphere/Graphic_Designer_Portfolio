@@ -34,7 +34,7 @@ export default function Awards() {
             />
           </svg>
           <span className="text-white font-bold uppercase tracking-[3px] text-sm font-heading">
-            Aurelia Awards
+            Reshab Awards
           </span>
         </div>
 
@@ -58,7 +58,7 @@ export default function Awards() {
           {awardList.map((award, index) => (
             <motion.div
               key={index}
-              className="group border-b border-white/10 py-10 lg:py-14 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 hover:bg-white/[0.02] transition-colors duration-300"
+              className="group border-b border-white/10 py-10 px-4 lg:py-14 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 hover:bg-white/[0.02] transition-colors duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

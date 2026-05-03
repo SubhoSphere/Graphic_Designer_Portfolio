@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#111111] pt-24 pb-12 px-6 lg:px-12 overflow-hidden border-t border-white/5">
+    <footer className="bg-[#111111] min-h-screen  md:h-screen flex flex-col justify-center pt-24 pb-12 px-6 lg:px-12 overflow-hidden border-t border-white/5">
       <div className="max-w-[1400px] mx-auto">
-        
+
         {/* Top Section Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-24">
-          
+
           {/* Logo & Contact */}
           <div className="space-y-10">
             <div className="flex items-center gap-3">
@@ -21,7 +21,7 @@ export default function Footer() {
               </svg>
               <div className="flex flex-col">
                 <span className="text-white text-2xl font-black uppercase tracking-tighter font-heading leading-none">
-                  Aurelia®
+                  Reshab®
                 </span>
                 <span className="text-white/40 text-[8px] font-bold uppercase tracking-[4px]">
                   Present
@@ -90,7 +90,7 @@ export default function Footer() {
               </div>
               <div className="flex items-baseline gap-3">
                 <h3 className="text-white text-xl md:text-2xl font-black uppercase font-heading leading-none">
-                  aurelia@info.com
+                  reshab@info.com
                 </h3>
                 <span className="text-white/20 text-[8px] font-bold uppercase tracking-widest">Email Address</span>
               </div>
@@ -104,7 +104,7 @@ export default function Footer() {
         {/* Massive Outlined Text */}
         <div className="relative py-12 select-none pointer-events-none">
           <h2 className="text-[10vw] font-black uppercase leading-none text-transparent [-webkit-text-stroke:1px_#c8ff00] opacity-20 whitespace-nowrap">
-            Aurelia Creative
+            Reshab Creative
           </h2>
         </div>
 

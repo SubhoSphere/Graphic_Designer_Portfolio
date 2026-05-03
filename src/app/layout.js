@@ -14,9 +14,9 @@ const outfit = Outfit({
 });
 
 export const metadata = {
-  title: "Aurelia — Creative Agency",
+  title: "Reshab — Creative Agency",
   description:
-    "Aurelia is a creative digital agency specializing in branding, graphic design, web design, and digital marketing.",
+    "Reshab is a creative digital agency specializing in branding, graphic design, web design, and digital marketing.",
 };
 
 export default function RootLayout({ children }) {
