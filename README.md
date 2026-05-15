@@ -1,5 +1,9 @@
 # Graphic Designer Portfolio
 
+<a href="#">
+  <img src="https://res.cloudinary.com/drfodwc7q/image/upload/v1778859969/RoomHover_wamuhd.png" alt="Portfolio Banner" width="100%" />
+</a>
+
 A premium, interactive web portfolio built for graphic designers to showcase their creative work, services, and client testimonials. Designed with modern aesthetics, smooth animations, and a focus on high-fidelity visual presentation.
 
 ## Features
